@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_anterior"
+        android:title="Anterior"
+        android:icon="@android:drawable/ic_media_previous"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_guardar"
+        android:title="Guardar"
+        android:icon="@android:drawable/ic_menu_save"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_siguiente"
+        android:title="Siguiente"
+        android:icon="@android:drawable/ic_media_next"
+        app:showAsAction="ifRoom" />
+
+</menu>

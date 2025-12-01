@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:foregroundGravity="center"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="52dp"
+        android:text="Ingrese Datos"
+        android:textSize="20sp"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/NombreEquipo"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Nombre del equipo"
+        android:paddingBottom="22dp"
+
+        />
+
+    <EditText
+        android:id="@+id/NombreCapitan"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Nombre del Capitán"
+        android:gravity="center"
+        android:paddingBottom="22dp"
+        />
+
+    <EditText
+        android:id="@+id/Telefono"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Telefono del Contacto"
+        android:gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/HoraInscripcion"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Hora de Inscripción"
+        android:gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/TiempoInscripcion"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Fecha de Inscripción"
+        android:gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/Pago"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Pago"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Botón"
+        android:textSize="22dp"
+        android:textColorHint="@color/White"
+        android:backgroundTint="@color/Black"
+        />
+
+    <Button
+        android:id="@+id/ButtonVer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Ver"
+        android:textSize="22dp"
+        android:textColorHint="@color/White"
+        android:backgroundTint="@color/Gray"
+        />
+
+
+</LinearLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".modificar">
+
+  <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar" />
+
+  <EditText
+      android:id="@+id/Mod_NombreEquipo"
+      android:layout_width="411dp"
+      android:layout_height="50dp"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:hint="Nombre del equipo"
+      android:paddingBottom="22dp"
+      android:layout_marginTop="15dp"
+      />
+
+  <EditText
+      android:id="@+id/Mod_NombreCapitan"
+      android:layout_width="411dp"
+      android:layout_height="50dp"
+      android:layout_gravity="center"
+      android:hint="Nombre del Capitán"
+      android:gravity="center"
+      android:paddingBottom="22dp"
+      />
+
+  <EditText
+      android:id="@+id/Mod_Telefono"
+      android:layout_width="411dp"
+      android:layout_height="50dp"
+      android:layout_gravity="center"
+      android:hint="Telefono del Contacto"
+      android:gravity="center"
+      />
+
+  <EditText
+      android:id="@+id/Mod_HoraInscripcion"
+      android:layout_width="411dp"
+      android:layout_height="50dp"
+      android:layout_gravity="center"
+      android:hint="Hora de Inscripción"
+      android:gravity="center"
+      />
+
+  <EditText
+      android:id="@+id/Mod_TiempoInscripcion"
+      android:layout_width="411dp"
+      android:layout_height="50dp"
+      android:layout_gravity="center"
+      android:hint="Fecha de Inscripción"
+      android:gravity="center"
+      />
+
+  <EditText
+      android:id="@+id/Mod_Pago"
+      android:layout_width="411dp"
+      android:layout_height="50dp"
+      android:layout_gravity="center"
+      android:hint="Pago"
+      android:gravity="center"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
+
+
+    <Button
+        android:id="@+id/Button_Anterior"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:text="Anterior"
+        android:backgroundTint="@color/Black"
+        />
+
+    <Button
+        android:id="@+id/Button_Guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:text="Guardar Modificacion"
+        android:backgroundTint="@color/Gray"
+        />
+
+    <Button
+        android:id="@+id/Button_Siguiente"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:text="Siguiente"
+        android:backgroundTint="@color/Black"
+        />
+  </LinearLayout>
+
+
+</LinearLayout>
