@@ -11,7 +11,7 @@
             android:gravity="center"
             android:paddingLeft="22dp"
             android:paddingRight="22dp"
-            android:text="Nombre Equipo" />
+            android:text="Nombre Producto" />
 
         <TextView
             android:id="@+id/ListaCapi"
@@ -20,12 +20,7 @@
             android:gravity="center"
             android:paddingLeft="22dp"
             android:paddingRight="22dp"
-            android:text="Nomre capitan"
+            android:text="Descripción"
             android:clickable="true"
             />
-
-
-
 </LinearLayout>
-
-

@@ -2,6 +2,7 @@ package adaptadores;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -13,23 +14,32 @@ import com.example.torneo.R;
 import com.example.torneo.Card;
 
 import Pojo.global.info;
+import Pojo.producto; // CORREGIDO: Importa 'producto'
 
 
 public class adaptadorver extends RecyclerView.Adapter<adaptadorver.Miniactivity> {
     public Context context;
+
+    public adaptadorver(Context context) {
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public Miniactivity onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v=View.inflate(context,R.layout.milista,null);
-        Miniactivity obj=new Miniactivity(v);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.milista, parent, false);
+        Miniactivity obj = new Miniactivity(v);
         return (obj);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Miniactivity miact, int i) {
         final int pos=i;
-        miact.NombreEq.setText(info.lista.get(i).getNomEqui());
-        miact.NombreCap.setText(info.lista.get(i).getNomCap());
+        producto productoActual = info.lista.get(i); // Usa 'producto'
+
+        miact.NombreEq.setText(productoActual.getNomProd());
+        miact.NombreCap.setText(productoActual.getDescripcion());
+
         miact.NombreCap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,15 +53,15 @@ public class adaptadorver extends RecyclerView.Adapter<adaptadorver.Miniactivity
 
     @Override
     public int getItemCount() {
-        return 0;
+        return info.lista.size();
     }
 
     public class Miniactivity extends RecyclerView.ViewHolder{
         TextView NombreEq,NombreCap;
         public Miniactivity(@NonNull View itemView) {
             super(itemView);
-            NombreEq=itemView.findViewById(R.id.NombreEquipo);
-            NombreCap=itemView.findViewById(R.id.NombreCapitan);
+            NombreEq=itemView.findViewById(R.id.ListaEqui);
+            NombreCap=itemView.findViewById(R.id.ListaCapi);
 
         }
     }

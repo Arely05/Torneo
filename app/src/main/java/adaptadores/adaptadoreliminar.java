@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.torneo.R;
 
-import Pojo.equipo;
+import Pojo.producto; // CORREGIDO: Importa 'producto'
 import Pojo.global.info;
 
 public class adaptadoreliminar extends RecyclerView.Adapter<adaptadoreliminar.Miniactivity> {
@@ -31,18 +31,18 @@ public class adaptadoreliminar extends RecyclerView.Adapter<adaptadoreliminar.Mi
 
     @Override
     public void onBindViewHolder(@NonNull Miniactivity holder, int position) {
-        final equipo equipoActual = info.lista.get(position);
+        final producto productoActual = info.lista.get(position); // Usa 'producto'
 
-        holder.checkBox.setText(equipoActual.getNomEqui());
-        holder.checkBox.setChecked(info.listabaja.contains(equipoActual));
+        holder.checkBox.setText(productoActual.getNomProd());
+        holder.checkBox.setChecked(info.listabaja.contains(productoActual));
 
         holder.checkBox.setOnClickListener(v -> {
             CheckBox c = (CheckBox) v;
             if (c.isChecked()) {
-                if (!info.listabaja.contains(equipoActual))
-                    info.listabaja.add(equipoActual);
+                if (!info.listabaja.contains(productoActual))
+                    info.listabaja.add(productoActual);
             } else {
-                info.listabaja.remove(equipoActual);
+                info.listabaja.remove(productoActual);
             }
         });
     }
@@ -52,15 +52,14 @@ public class adaptadoreliminar extends RecyclerView.Adapter<adaptadoreliminar.Mi
         return info.lista.size();
     }
 
+    // Estructura de ViewHolder verificada
     public static class Miniactivity extends RecyclerView.ViewHolder {
-        CheckBox checkBox;
+        CheckBox checkBox; // Declaración de la variable miembro (campo de clase)
 
         public Miniactivity(@NonNull View itemView) {
             super(itemView);
+            // Inicialización (donde te da error)
             checkBox = itemView.findViewById(R.id.CheckBox_Eliminar);
         }
-    }
-
-    public class ver {
     }
 }

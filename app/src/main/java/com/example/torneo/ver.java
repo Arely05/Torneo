@@ -23,11 +23,14 @@ public class ver extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        // NOTA: Se asume que has corregido activity_ver.xml para contener el RecyclerView
         setContentView(R.layout.activity_ver);
 
         r = findViewById(R.id.Rec);
-        adaptadorver av = new adaptadorver();
-        av.context = this;
+
+        // CORRECCIÓN: Llamada al constructor que recibe el contexto.
+        adaptadorver av = new adaptadorver(this);
+
         LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false);
         r.setAdapter(av);
         r.setLayoutManager(llm);

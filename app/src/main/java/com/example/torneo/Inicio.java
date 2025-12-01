@@ -48,7 +48,7 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String url = "http://192.168.1.100/mi_basedatos/ingreso.php?usr=";
+                String url = "http://10.0.2.2/bd/ingreso.php?usr=";
                 url = url + Usuario.getText().toString();
                 url = url + "&pass=" + Contrasena.getText().toString();
 

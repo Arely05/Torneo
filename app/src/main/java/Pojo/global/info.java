@@ -2,11 +2,11 @@ package Pojo.global;
 
 import java.util.ArrayList;
 
-import Pojo.equipo;
+import Pojo.producto; // Referencia a 'producto'
 
 public class info {
 
-    public static final ArrayList<equipo> lista = new ArrayList<>();
+    public static final ArrayList<producto> lista = new ArrayList<>(); // Usa 'producto'
 
-    public static final ArrayList<equipo> listabaja = new ArrayList<>();
+    public static final ArrayList<producto> listabaja = new ArrayList<>(); // Usa 'producto'
 }

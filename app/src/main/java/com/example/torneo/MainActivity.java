@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -16,13 +17,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import Pojo.equipo;
-import adaptadores.adaptadoreliminar;
+import Pojo.producto; // CORREGIDO: Usa 'producto'
 import Pojo.global.info;
+import adaptadores.adaptadoreliminar;
 
 public class MainActivity extends AppCompatActivity {
     EditText NomEqui, NomCap, Tel , HoraIns, TiempoIns, Pago;
-    Button button;
+    Button button, ButtonVer;
     Toolbar toolbar;
 
     @Override
@@ -38,27 +39,35 @@ public class MainActivity extends AppCompatActivity {
         TiempoIns = findViewById(R.id.TiempoInscripcion);
         Pago = findViewById(R.id.Pago);
         button = findViewById(R.id.button);
+        ButtonVer = findViewById(R.id.ButtonVer);
 
         toolbar=findViewById(R.id.toolbar);
-
-
         setSupportActionBar(toolbar);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                equipo unequipo = new equipo();
-                unequipo.setNomEqui(NomEqui.getText().toString());
-                unequipo.setNomCap(NomCap.getText().toString());
-                unequipo.setTel(Tel.getText().toString());
-                unequipo.setHora(HoraIns.getText().toString());
-                unequipo.setFecha(TiempoIns.getText().toString());
-                unequipo.setPago(Pago.getText().toString());
+                producto nuevoProducto = new producto(); // Usa 'producto'
+                nuevoProducto.setNomProd(NomEqui.getText().toString());
+                nuevoProducto.setDescripcion(NomCap.getText().toString());
+                nuevoProducto.setPrecio(Tel.getText().toString());
+                nuevoProducto.setCantidad(HoraIns.getText().toString());
+                nuevoProducto.setCodigo(TiempoIns.getText().toString());
+                nuevoProducto.setProveedor(Pago.getText().toString());
 
-                info.lista.add(unequipo);
+                info.lista.add(nuevoProducto);
+                Toast.makeText(MainActivity.this, "Producto registrado: " + nuevoProducto.getNomProd(), Toast.LENGTH_SHORT).show();
 
 
+            }
+        });
+
+        ButtonVer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent verActivity = new Intent(MainActivity.this, ver.class);
+                startActivity(verActivity);
             }
         });
 
@@ -70,16 +79,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.opc1){
-            Intent ver=new Intent(this, adaptadoreliminar.ver.class);
-            startActivity(ver);
+            Intent eliminar=new Intent(this, Eliminar.class); // <-- Navega a Eliminar
+            startActivity(eliminar);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
